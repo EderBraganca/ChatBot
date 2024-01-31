@@ -1,0 +1,20 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #962038;
+  width: 30%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.sidebar.dark {
+  background-color: #962038;
+  z-index: -1; /* Adicione z-index aqui se necessário */
+}
+
+.sidebar.light {
+  background-color: #C65068;
+  z-index: -1; /* Adicione z-index aqui se necessário */
+}
