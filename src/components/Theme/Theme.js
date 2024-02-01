@@ -9,6 +9,5 @@ export const darkTheme = {
     body: '#363537',
     text: '#FAFAFA',
     border: '#000',
-    background: '#999',
     color: '#FFF'
 };

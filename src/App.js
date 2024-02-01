@@ -27,7 +27,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalTheme />
-          <button onClick={toggleTheme}>Toggle theme</button>
+          <button onClick={toggleTheme} id="buttonTheme">Toggle theme</button>
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
