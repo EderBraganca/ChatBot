@@ -4,25 +4,20 @@ import SideBar from '../../components/SideBar/SideBar.jsx';
 import Header from '../../components/Header/Header.jsx';
 import './Home.css';
 
-const Home = () => {
+const Home = ({ toggleTheme }) => {
   const [active, setIsSidebarOpen] = useState(false);
   const [activeChat, setIsHideChat] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!active);
     setIsHideChat(!activeChat);
-  };  
-
-  const toggleTheme = () => {
-    console.log("toggle theme");
   };
-
 
   return (
     <div>
-      <Header onSidebarToggle={toggleSidebar} />
+      <Header onSidebarToggle={toggleSidebar} themeToggle={toggleTheme}/>
       <SideBar active={active} toggleSidebar={toggleSidebar} />
-      <Chat active={activeChat} themeToggle={toggleTheme}/>
+      <Chat active={activeChat}  />
     </div>
   );
 };

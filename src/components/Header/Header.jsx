@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from './Header.js'
 import { FaBars , FaAdjust } from 'react-icons/fa'
 
-const Header = ({ onSidebarToggle }, { themeToggle} ) => {
+const Header = ({ onSidebarToggle, themeToggle} ) => {
   return (
     <Container>
       <FaBars onClick={onSidebarToggle} />
