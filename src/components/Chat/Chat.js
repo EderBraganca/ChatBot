@@ -1,14 +1,16 @@
-import React, {Component} from 'react';
-import './Chat.css';
+import styled from 'styled-components';
 
-class Chat extends Component {
-    render() {
-        return(
-            <nav id="chat">
-                <input type="textArea" id="chat-input" placeholder="Type a message..."/>
-            </nav>
-        );
-    }
-}
-
-export default Chat;
+export const Container = styled.div` 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 200%;
+    top: 0;
+    z-index: -1;
+    width: ${props => props.chat ? '100%' : '70%'};
+    left: ${props => props.chat ? '0%' : '30'};
+`;
