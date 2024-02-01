@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   > svg {
-    position: fixed;
-    width: 2%;
-    height: 2%;
+    width: 1%;
+    height: 1%;
     margin-top: 1%;
     margin-left: 1%;
     cursor: pointer;
-    z-index: 1;
+    z-index: 100;
   }
 `;

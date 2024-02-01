@@ -1,19 +1,30 @@
-import {React, Component} from 'react';
+import React, { useState } from 'react';
 import Chat from '../../components/Chat/Chat.jsx';
 import SideBar from '../../components/SideBar/SideBar.jsx';
 import Header from '../../components/Header/Header.jsx';
 import './Home.css';
 
-class Home extends Component {
-    render() {
-        return (
-            <div>
-              <Header />
-              <Chat />
-              <SideBar />
-            </div>
-        );
-      }
-}
+const Home = () => {
+  const [active, setIsSidebarOpen] = useState(false);
+  const [activeChat, setIsHideChat] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!active);
+    setIsHideChat(!activeChat);
+  };  
+
+  const toggleTheme = () => {
+    console.log("toggle theme");
+  };
+
+
+  return (
+    <div>
+      <Header onSidebarToggle={toggleSidebar} />
+      <SideBar active={active} toggleSidebar={toggleSidebar} />
+      <Chat active={activeChat} themeToggle={toggleTheme}/>
+    </div>
+  );
+};
 
 export default Home;
