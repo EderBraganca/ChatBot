@@ -5,8 +5,8 @@ import Header from '../../components/Header/Header.jsx';
 import './Home.css';
 
 const Home = ({ toggleTheme }) => {
-  const [active, setIsSidebarOpen] = useState(false);
-  const [activeChat, setIsHideChat] = useState(false);
+  const [active, setIsSidebarOpen] = useState(true);
+  const [activeChat, setIsHideChat] = useState(true);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!active);
