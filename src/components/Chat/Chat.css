@@ -69,8 +69,12 @@
     margin-left: 6vh;
     align-self: flex-start;
     max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    align-items: flex-start;
+    justify-content: flex-start; 
 }
-
 .message-balloon {
     background-color: #962038;
     white-space: pre-line;

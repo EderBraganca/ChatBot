@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
-import { Container} from './Chat.js'
-import './Chat.css'
+import React, { useState, useEffect, useRef } from 'react';
+import { Container } from './Chat.js';
+import './Chat.css';
 
 const Chat = ({ active }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+     messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   const handleInputChange = (e) => {
     setMessage(e.target.value);
@@ -15,10 +20,8 @@ const Chat = ({ active }) => {
 
     if (message.trim() !== '') {
       setMessages((prevMessages) => [...prevMessages, message]);
-
       setMessage('');
     }
-    console.log(messages);
   };
 
   return (
@@ -30,11 +33,18 @@ const Chat = ({ active }) => {
               {msg}
             </div>
           ))}
+          <div ref={messagesEndRef} />
         </div>
 
         <form id="formChat" onSubmit={handleSubmit}>
-          <input id="inputChat" name="name"autoComplete="off"
-            required value={message} onChange={handleInputChange}/>
+          <input
+            id="inputChat"
+            name="name"
+            autoComplete="off"
+            required
+            value={message}
+            onChange={handleInputChange}
+          />
           <label id="chatLabel" htmlFor="name">
             <span id="chatText">Digite aqui</span>
           </label>
@@ -42,6 +52,6 @@ const Chat = ({ active }) => {
       </nav>
     </Container>
   );
-}
+};
 
-export default Chat
+export default Chat;
