@@ -18,6 +18,7 @@ const Chat = ({ active }) => {
 
       setMessage('');
     }
+    console.log(messages);
   };
 
   return (

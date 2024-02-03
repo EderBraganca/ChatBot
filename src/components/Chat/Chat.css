@@ -20,18 +20,18 @@
 #inputChat {
     bottom: 1%;
     color: #fff;
+    white-space: pre-line;
     font-size: 20px;
     width: 100%;
     padding: 20px 5px 5px;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid;
-    border-radius: 4px;
     border-color: #666567;
+    border-radius: 4px;
     margin-top: 0.5%;
 }
 
 #chatLabel {
-    color: #fff;
     left: 0;
     pointer-events: none;
 }
@@ -55,7 +55,6 @@
 #inputChat:valid+#chatLabel span {
     transform: translateY(-150%);
     font-size: 14px;
-    bottom: 10px;
     color: #e0138c;
 }
 
@@ -67,14 +66,19 @@
 .message-balloons {
     display: flex;
     flex-direction: column;
+    margin-left: 6vh;
+    align-self: flex-start;
+    max-width: 80%;
 }
 
 .message-balloon {
     background-color: #962038;
+    white-space: pre-line;
+    word-wrap: break-word;
+    width: 100%;
     padding: 8px;
     margin: 4px 0;
     border-radius: 8px;
-    width: 100%;
     color: white;
     align-self: flex-start;
 }
