@@ -2,16 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Container } from './Chat.js';
 import MessageBaloon from './../MessageBaloon/MessageBaloon';
 import MessageInput from './../MessageInput/MessageInput';
+import WelcomeMessage from '../WelcomeMessage/WelcomeMessage.jsx';
 import './Chat.css';
 
 const Chat = ({ active }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const messagesEndRef = useRef(null);
-
-  useEffect(() => {
-    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
 
   const handleInputChange = (e) => {
     setMessage(e.target.value);
@@ -43,34 +39,33 @@ const Chat = ({ active }) => {
       const data = await response.json();
       console.log(data);
 
-      // Adiciona a resposta da API às mensagens locais
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: data.message, isBot: true },
       ]);
     } catch (error) {
       console.error('Erro na requisição para a API:', error.message);
-      // Pode adicionar lógica para tratar erros de requisição, se necessário
     }
 
-    // Limpa o campo de mensagem após o envio
     setMessage('');
-
   };
 
   return (
     <Container chat={!active}>
       <nav id="chatTotal">
-        <div className="message-balloons">
-          {messages.map((msg, index) => (
-            <MessageBaloon
-              key={index}
-              message={msg.text}
-              isBot={msg.isBot}
-            />
-          ))}
-          <div ref={messagesEndRef} />
-        </div>
+        {messages.length === 0 ? (
+          <WelcomeMessage />
+        ) : (
+          <div className="message-balloons">
+            {messages.map((msg, index) => (
+              <MessageBaloon
+                key={index}
+                message={msg.text}
+                isBot={msg.isBot}
+              />
+            ))}
+          </div>
+        )}
 
         <MessageInput
           onSubmit={handleSubmit}

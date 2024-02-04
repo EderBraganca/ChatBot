@@ -15,4 +15,8 @@ export default createGlobalStyle`
     font-family: sans-serif;
     transition: all 0.25s linear;
   }
+
+  .logo {
+    
+  }
 `;
