@@ -1,6 +1,5 @@
 
 #formChat {
-    overflow: hidden;
     position: relative;
     width: 80%;
     margin: 15px 0;
@@ -16,6 +15,7 @@
     border-color: #666567;
     border-radius: 8px;
 
+    word-wrap: break-word;
     color: white;
 }
 

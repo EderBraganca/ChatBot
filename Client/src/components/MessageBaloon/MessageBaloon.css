@@ -1,7 +1,9 @@
 .message-balloon {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-self: flex-end;
+
+  max-width: 75%;
 
   word-wrap: break-word;
   padding: 8px 15px;

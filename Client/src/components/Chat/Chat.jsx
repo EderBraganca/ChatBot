@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Container } from './Chat.js';
-import MessageBaloon from './../MessageBaloon/MessageBaloon'
-import MessageInput from './../MessageInput/MessageInput'
+import MessageBaloon from './../MessageBaloon/MessageBaloon';
+import MessageInput from './../MessageInput/MessageInput';
 import './Chat.css';
 
 const Chat = ({ active }) => {
@@ -17,11 +17,45 @@ const Chat = ({ active }) => {
     setMessage(e.target.value);
   };
 
-  const handleSubmit = () => {
-    if (message.trim() !== '') {
-      setMessages((prevMessages) => [...prevMessages, message]);
-      setMessage('');
+  const handleSubmit = async () => {
+    if (message.trim() === '') {
+      return;
     }
+
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: message, isBot: false },
+    ]);
+
+    try {
+      const response = await fetch('http://localhost:443/message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: message, chatid: "1" }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erro ao obter resposta do chat');
+      }
+
+      const data = await response.json();
+      console.log(data);
+
+      // Adiciona a resposta da API às mensagens locais
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: data.message, isBot: true },
+      ]);
+    } catch (error) {
+      console.error('Erro na requisição para a API:', error.message);
+      // Pode adicionar lógica para tratar erros de requisição, se necessário
+    }
+
+    // Limpa o campo de mensagem após o envio
+    setMessage('');
+
   };
 
   return (
@@ -29,21 +63,20 @@ const Chat = ({ active }) => {
       <nav id="chatTotal">
         <div className="message-balloons">
           {messages.map((msg, index) => (
-            <MessageBaloon key={index} message={msg} isBot={true} />
-          ))}
-          {messages.map((msg, index) => (
-            <MessageBaloon 
-                key={index} 
-                message={msg} 
-                isBot={false} />
+            <MessageBaloon
+              key={index}
+              message={msg.text}
+              isBot={msg.isBot}
+            />
           ))}
           <div ref={messagesEndRef} />
         </div>
 
-        <MessageInput 
-            onSubmit={handleSubmit} 
-            onInputChange={handleInputChange} 
-            value={message} />
+        <MessageInput
+          onSubmit={handleSubmit}
+          onInputChange={handleInputChange}
+          value={message}
+        />
       </nav>
     </Container>
   );

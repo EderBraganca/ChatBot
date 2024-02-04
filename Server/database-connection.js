@@ -25,11 +25,10 @@ async function insertMessage(message, botresponse, chatid) {
     const database = client.db(db);
     const messages = database.collection(chatid);
 
-    const query = `{"message":"${message}",
-                    "botresponse":"${botresponse}"}`;
+    const query = `{"usermessage":"${message}",
+                    "botmessage":"${botresponse}"}`;
 
     await messages.insertOne(JSON.parse(query));
-
     await client.close();
 }
 
