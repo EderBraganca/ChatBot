@@ -1,0 +1,20 @@
+.message-balloon {
+  display: flex;
+  justify-content: end;
+  align-self: flex-end;
+
+  word-wrap: break-word;
+  padding: 8px 15px;
+  margin: 4px 0;
+
+  border-radius: 8px;
+  background-color: #962038;
+  color: white;
+}
+
+.is-bot {
+  align-self: flex-start;
+
+  background-color: lightgray;
+  color: #962038;
+}

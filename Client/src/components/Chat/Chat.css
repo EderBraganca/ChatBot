@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    position: absolute;
     width: 100%;
     height: 100%;
     right: 0;
@@ -11,78 +10,10 @@
     z-index: -1;
 }
 
-#formChat {
-    overflow: hidden;
-    position: relative;
-    width: 80%;
-}
-
-#inputChat {
-    bottom: 1%;
-    color: #fff;
-    white-space: pre-line;
-    font-size: 20px;
-    width: 100%;
-    padding: 20px 5px 5px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid;
-    border-color: #666567;
-    border-radius: 4px;
-    margin-top: 0.5%;
-}
-
-#chatLabel {
-    left: 0;
-    pointer-events: none;
-}
-
-#chatText {
-    position: absolute;
-    bottom: 10px;
-    left: 15px;
-    font-size: 20px;
-    transition: all 0.3s ease;
-}
-
-#chatLabel::after {
-    content: "";
-    position: absolute;
-    transform: translateX(-100%);
-    transition: all 0.3s ease;
-}
-
-#inputChat:focus+#chatLabel span,
-#inputChat:valid+#chatLabel span {
-    transform: translateY(-150%);
-    font-size: 14px;
-    color: #e0138c;
-}
-
-#inputChat:focus+#chatLabel::after,
-#inputChat:valid+#chatLabel::after {
-    transform: translateX(0%);
-}
-
 .message-balloons {
     display: flex;
     flex-direction: column;
-    margin-left: 6vh;
-    align-self: flex-start;
-    max-width: 80%;
-    max-height: 80%;
+    width: 80%;
     overflow-y: auto;
     overflow-x: hidden; 
-    align-items: flex-start;
-    justify-content: flex-start; 
-}
-.message-balloon {
-    background-color: #962038;
-    white-space: pre-line;
-    word-wrap: break-word;
-    width: 100%;
-    padding: 8px;
-    margin: 4px 0;
-    border-radius: 8px;
-    color: white;
-    align-self: flex-start;
 }

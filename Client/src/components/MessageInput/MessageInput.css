@@ -1,0 +1,55 @@
+
+#formChat {
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    margin: 15px 0;
+}
+
+#inputChat {
+    font-size: 20px;
+    width: 100%;
+    padding: 20px 5px 5px;
+    background: rgba(0, 0, 0, 0.5);
+
+    border: 1px solid;
+    border-color: #666567;
+    border-radius: 8px;
+
+    color: white;
+}
+
+#chatLabel {
+    left: 0;
+    pointer-events: none;
+}
+
+#chatText {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    font-size: 20px;
+    font-style: italic;
+    transition: all 0.3s ease;
+}
+
+#chatLabel::after {
+    content: "";
+    position: absolute;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+
+
+#inputChat:focus+#chatLabel span,
+#inputChat:valid+#chatLabel span {
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #e0138c;
+}
+
+#inputChat:focus+#chatLabel::after,
+#inputChat:valid+#chatLabel::after {
+    transform: translateX(0%);
+}
