@@ -8,6 +8,12 @@ import './Chat.css';
 const Chat = ({ active }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    if (messagesEndRef && messagesEndRef.current)
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   const handleInputChange = (e) => {
     setMessage(e.target.value);
@@ -64,6 +70,7 @@ const Chat = ({ active }) => {
                 isBot={msg.isBot}
               />
             ))}
+            <div ref={messagesEndRef} />
           </div>
         )}
 

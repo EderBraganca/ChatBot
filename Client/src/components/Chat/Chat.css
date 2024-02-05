@@ -15,7 +15,26 @@
 .message-balloons {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
+    padding: 0 10%;
+
     overflow-y: auto;
     overflow-x: hidden; 
+
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent; 
+}
+
+.message-balloons::-webkit-scrollbar {
+    width: 6px;
+}
+
+.message-balloons::-webkit-scrollbar-thumb {
+    background-color: var(--textColor);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.message-balloons::-webkit-scrollbar-track {
+    background-color: transparent;
 }
