@@ -17,6 +17,7 @@ export default createGlobalStyle`
   }
 
   body {
+    background-color: var(--backgroundColor);
     margin: 0;
     padding: 0;
     font-family: sans-serif;
