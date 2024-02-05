@@ -2,16 +2,20 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  background-color: #1A202C; 
-  font-size: 20px;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
+  rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  margin: 0 15px 20px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  margin: 10%;
 
   > svg {
-    margin: 0 20px;
+    margin: 20px;
+    width: 10vh;
+    height: 10vh;
+    cursor: pointer;
+    z-index: 100;
   }
 `;
