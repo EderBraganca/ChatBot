@@ -17,6 +17,7 @@ export default createGlobalStyle`
   }
 
   body {
+    color: ${({ theme }) => theme.textColor};
     margin: 0;
     padding: 0;
     font-family: sans-serif;
