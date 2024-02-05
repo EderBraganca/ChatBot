@@ -13,7 +13,7 @@ const SideBar = ({ active }) => {
         <a href="https://www.ufop.br/" target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none' }}>
           <SideBarItem Icon={FaUniversity} Text="Site da UFOP" />
         </a>
-        <a href="www.minhaufop.ufop.br" target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none' }}>
+        <a href="https://www.minhaufop.ufop.br" target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none' }}>
           <SideBarItem Icon={FaHouseUser} Text="Minha UFOP" />
         </a>        
         <a href="https://moodlepresencial.ufop.br" target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none' }}>

@@ -17,6 +17,7 @@ export default createGlobalStyle`
   }
 
   body {
+    color: ${({ theme }) => theme.textColor};
     background-color: var(--backgroundColor);
     margin: 0;
     padding: 0;
