@@ -2,16 +2,15 @@
   display: flex;
   justify-content: flex-end;
   align-self: flex-end;
-
-  max-width: 75%;
-
-  word-wrap: break-word;
+  
+  word-break: break-word; 
   padding: 8px 15px;
   margin: 4px 0;
 
+  max-width: 75%;
   border-radius: 8px;
   background-color: #962038;
-  color: white;
+  color: white;    
 }
 
 .is-bot {
