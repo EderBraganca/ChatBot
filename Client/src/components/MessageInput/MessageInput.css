@@ -4,6 +4,7 @@
     position: relative;
     width: 80%;
     margin: 15px 0;
+    display: flex;
 }
 
 #inputChat {
@@ -52,4 +53,8 @@
 #inputChat:focus+#chatLabel::after,
 #inputChat:valid+#chatLabel::after {
     transform: translateX(0%);
+}
+#buttonSubmit{
+    height: 100%;
+    width: 6vh;
 }

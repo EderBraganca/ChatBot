@@ -1,5 +1,7 @@
 import React from 'react';
 import './MessageInput.css';
+import { CiSquareChevUp } from "react-icons/ci";
+
 
 const MessageInput = ({ onSubmit, onInputChange, value }) => {
 
@@ -21,6 +23,7 @@ const MessageInput = ({ onSubmit, onInputChange, value }) => {
             <label id="chatLabel" htmlFor="name">
                 <span id="chatText">Digite aqui</span>
             </label>
+            <CiSquareChevUp onClick={handleSubmit} id='buttonSubmit'/>
         </form>
     );
 };
