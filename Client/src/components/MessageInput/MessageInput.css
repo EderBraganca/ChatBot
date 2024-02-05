@@ -1,3 +1,4 @@
+/* Light Theme */
 
 #formChat {
     position: relative;
@@ -9,14 +10,14 @@
     font-size: 20px;
     width: 100%;
     padding: 20px 5px 5px;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--inputColor); /* Cor de fundo mais clara */
 
     border: 1px solid;
-    border-color: #666567;
+    border-color: var(--inputBorder); /* Cor da borda mais clara */
     border-radius: 8px;
 
     word-wrap: break-word;
-    color: white;
+    color: var(--textColor); /* Cor do texto mais escura */
 }
 
 #chatLabel {
@@ -31,6 +32,7 @@
     font-size: 20px;
     font-style: italic;
     transition: all 0.3s ease;
+    color: var(--textColor); 
 }
 
 #chatLabel::after {
@@ -39,8 +41,6 @@
     transform: translateX(-100%);
     transition: all 0.3s ease;
 }
-
-
 
 #inputChat:focus+#chatLabel span,
 #inputChat:valid+#chatLabel span {

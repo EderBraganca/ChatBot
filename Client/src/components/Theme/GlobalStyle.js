@@ -7,16 +7,19 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    --textColor: ${({ theme }) => theme.textColor};
+    --backgroundColor: ${({ theme }) => theme.backgroundColor};
+    --inputColor: ${({ theme }) => theme.inputColor};
+    --inputBorder: ${({ theme }) => theme.inputBorder};
+    --strongText: ${({ theme }) => theme.strongText};
+    --inputBorder: ${({ theme }) => theme.inputBorder};
+  }
+
   body {
-    background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     transition: all 0.25s linear;
-  }
-
-  .logo {
-    
   }
 `;
