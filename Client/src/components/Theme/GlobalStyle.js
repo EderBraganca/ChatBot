@@ -13,7 +13,7 @@ export default createGlobalStyle`
     --inputColor: ${({ theme }) => theme.inputColor};
     --inputBorder: ${({ theme }) => theme.inputBorder};
     --strongText: ${({ theme }) => theme.strongText};
-    --inputBorder: ${({ theme }) => theme.inputBorder};
+    --logoColor: ${({ theme }) => theme.logoColor};
   }
 
   body {

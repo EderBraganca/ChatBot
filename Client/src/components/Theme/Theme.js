@@ -6,6 +6,7 @@ export const lightTheme = {
     inputBorder: '#ccc',
 
     strongText: '#333',
+    logoColor: 'invert(19%) sepia(50%) saturate(35%) hue-rotate(74deg) brightness(101%) contrast(104%)',
 };
 
 export const darkTheme = {
@@ -16,4 +17,5 @@ export const darkTheme = {
     inputBorder: '#666567',
 
     strongText: '#e3e3e3',
+    logoColor: 'invert(77%) sepia(0%) saturate(0%) hue-rotate(134deg) brightness(111%) contrast(102%)',
 };

@@ -4,7 +4,7 @@ import './WelcomeMessage.css';
 
 const WelcomeMessage = () => {
 
-    const logoUfopPath = 'assets/logoufop.svg';
+    const logoUfopPath = 'assets/logo.svg';
 
     return (
         <div className='container'>
