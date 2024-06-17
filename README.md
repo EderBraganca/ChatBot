@@ -4,12 +4,16 @@ The client is developed using React and TypeScript, while the server is built wi
 
 # For client
 cd client
+
 npm install
+
 npm start
 
 # For server
 cd ../server
+
 npm install
+
 node server.js
 
 
